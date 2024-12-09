@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThatGodlyExecutor</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://n-src.github.io/windows11-oobe-firstlogonanim/doc/images/overview/FirstLogonBackground.png') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(5px);
+            z-index: -1;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            overflow: auto;
+        }
+        .title-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        .title {
+            position: absolute;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-buttons button {
+            background: none;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 15px;
+        }
+        .nav-buttons button:hover {
+            color: #ccc;
+        }
+        .content {
+            padding: 100px 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            margin: 50px auto;
+            max-width: 800px;
+        }
+        .about-content {
+            color: #fff;
+        }
+        #download img {
+            max-width: 80%;
+            height: auto;
+            margin: 0 auto 20px;
+            display: block;
+        }
+        .download-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .download-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="title-bar">
+            <div class="title">ThatGodlyExecutor</div>
+            <div class="nav-buttons">
+                <button onclick="showPage('download')">Download</button>
+                <button onclick="showPage('about')">About</button>
+                <button onclick="window.location.href='https://dc.gg/thatgodlyexecutor/'">Discord</button>
+            </div>
+        </div>
+        <div id="download" class="content">
+            <img src="https://media.discordapp.net/attachments/1315737704033550347/1315738048084054119/image.png?ex=6758800b&is=67572e8b&hm=7c1c7cc9a978006aa7c0a94052a0475d4c06cd9de8a7f9f236e5bb7c7b574682&=&format=webp&quality=lossless&width=1177&height=662" alt="Download Image">
+            <a href="https://pastebin.com/raw/pJXsxMFg" class="download-button">Download for Windows</a>
+        </div>
+        <div id="about" class="content" style="display: none;">
+            <h1>About</h1>
+            <p class="about-content">Meet the best Roblox scripting utility, ThatGodlyExecutor. Dominate your gaming with fast script execution and fast updates so you don't have to worry about anything! We have auto execution implementation and auto injection to level up your gaming to the maximum. What are you waiting for? Download now!</p>
+        </div>
+    </div>
+
+    <script>
+        function showPage(page) {
+            document.getElementById('download').style.display = 'none';
+            document.getElementById('about').style.display = 'none';
+            document.getElementById(page).style.display = 'block';
+        }
+        // Set default page
+        showPage('download');
+    </script>
+</body>
+</html>
