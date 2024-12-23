@@ -4,127 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ThatGodlyExecutor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
-        }
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://n-src.github.io/windows11-oobe-firstlogonanim/doc/images/overview/FirstLogonBackground.png') no-repeat center center fixed;
-            background-size: cover;
-            filter: blur(5px);
-            z-index: -1;
-        }
-        .container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            overflow: auto;
-        }
-        .title-bar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
+            font-family: 'Poppins', sans-serif;
+            background-color: #141414; /* Dark gray */
+            color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
+            height: 100vh;
+        }
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 1200px;
+        }
+        .left-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
         }
         .title {
-            position: absolute;
-            left: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #fff;
+            font-size: 2.5em;
+            font-weight: 600;
         }
-        .nav-buttons {
+        .highlight {
+            color: #4CAF50; /* Modern green */
+        }
+        .description {
+            margin-top: 20px;
+            font-size: 1.2em;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        .buttons {
+            margin-top: 30px;
             display: flex;
             gap: 15px;
         }
-        .nav-buttons button {
-            background: none;
-            color: #fff;
-            border: none;
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent; /* Transparent background */
+            border: 2px solid #fff; /* White border */
+            color: #fff; /* White text */
+            padding: 12px 24px;
             cursor: pointer;
-            font-size: 16px;
-            padding: 10px 15px;
+            font-size: 1em;
+            font-weight: 600;
+            border-radius: 30px; /* Rounded corners */
+            gap: 12px; /* Space between icon and text */
+            transition: all 0.3s ease;
         }
-        .nav-buttons button:hover {
-            color: #ccc;
+        .button img {
+            width: 24px;
+            height: 24px;
+            filter: invert(100%); /* Inverts colors to make dark icons white */
         }
-        .content {
-            padding: 100px 20px;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            margin: 50px auto;
-            max-width: 800px;
+        .button:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Light white overlay on hover */
+            color: #4CAF50; /* Green text on hover */
+            border-color: #4CAF50; /* Green border on hover */
         }
-        .about-content {
-            color: #fff;
+        .right-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        #download img {
-            max-width: 80%;
-            height: auto;
-            margin: 0 auto 20px;
-            display: block;
-        }
-        .download-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
+        .youtube-player {
+            width: 560px;
+            height: 315px;
             border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        .download-button:hover {
-            background-color: #0056b3;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
-    <div class="background"></div>
-    <div class="container">
-        <div class="title-bar">
-            <div class="title">ThatGodlyExecutor</div>
-            <div class="nav-buttons">
-                <button onclick="showPage('download')">Download</button>
-                <button onclick="showPage('about')">About</button>
-                <button onclick="window.location.href='https://dc.gg/thatgodlyexecutor/'">Discord</button>
+    <div class="main-container">
+        <div class="left-container">
+            <div class="title">Experience only the best with <span class="highlight">ThatGodlyExecutor</span>.</div>
+            <div class="description">
+                Dominate the Roblox exploiting market with our leading execution platform, featuring cutting-edge tools and a seamless user experience tailored for maximum efficiency.
+            </div>
+            <div class="buttons">
+                <button class="button" onclick="window.open('https://discord.gg/WAzSGcxdKg', '_blank')">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Logo">
+                    Discord
+                </button>
+                <button class="button" onclick="window.open('https://github.com/GithubbingCode/ThatGodlyExecutor', '_blank')">
+                    <img src="https://icons.iconarchive.com/icons/simpleicons-team/simple/256/windows-icon.png" alt="Windows Logo">
+                    Download
+                </button>
             </div>
         </div>
-        <div id="download" class="content">
-            <img src="https://i.ibb.co/n7fQyGD/thatgodlyexecutorpreview.webp" alt="Download Image">
-            <a href="https://pastebin.com/raw/pJXsxMFg" class="download-button">Download for Windows</a>
-        </div>
-        <div id="about" class="content" style="display: none;">
-            <h1>About</h1>
-            <p class="about-content">Meet the best Roblox scripting utility, ThatGodlyExecutor. Dominate your gaming with fast script execution and fast updates so you don't have to worry about anything! We have auto execution implementation and auto injection to level up your gaming to the maximum. What are you waiting for? Download now!</p>
+        <div class="right-container">
+            <iframe class="youtube-player" 
+                src="https://www.youtube.com/embed/QIlnPqal8uQ" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
         </div>
     </div>
-
-    <script>
-        function showPage(page) {
-            document.getElementById('download').style.display = 'none';
-            document.getElementById('about').style.display = 'none';
-            document.getElementById(page).style.display = 'block';
-        }
-        // Set default page
-        showPage('download');
-    </script>
 </body>
 </html>
