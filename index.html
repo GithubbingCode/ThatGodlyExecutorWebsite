@@ -9,8 +9,8 @@
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #141414; /* Dark gray */
-            color: #fff;
+            background-color: #1e1e1e; /* Darker gray for a richer look */
+            color: #e0e0e0; /* Light gray for readability */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,6 +21,10 @@
             justify-content: space-between;
             width: 80%;
             max-width: 1200px;
+            border-radius: 15px; /* Soft edges */
+            padding: 20px; /* Spacious layout */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+            background-color: #2a2a2a; /* Slightly lighter background for main container */
         }
         .left-container {
             display: flex;
@@ -29,47 +33,46 @@
             align-items: flex-start;
         }
         .title {
-            font-size: 2.5em;
-            font-weight: 600;
+            font-size: 3em; /* Slightly larger for prominence */
+            font-weight: 700; /* Bolder font */
+            margin-bottom: 10px;
         }
         .highlight {
             color: #4CAF50; /* Modern green */
         }
         .description {
-            margin-top: 20px;
             font-size: 1.2em;
             max-width: 600px;
-            line-height: 1.6;
+            line-height: 1.8;
+            color: #b0b0b0; /* Softer gray for text */
         }
         .buttons {
             margin-top: 30px;
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
         .button {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: transparent; /* Transparent background */
-            border: 2px solid #fff; /* White border */
+            background-color: #4CAF50; /* Green background */
             color: #fff; /* White text */
             padding: 12px 24px;
             cursor: pointer;
             font-size: 1em;
             font-weight: 600;
+            border: none; /* Remove border for a cleaner look */
             border-radius: 30px; /* Rounded corners */
-            gap: 12px; /* Space between icon and text */
+            gap: 10px; /* Space between icon and text */
             transition: all 0.3s ease;
+            text-decoration: none; /* Ensure text decoration is removed for links */
         }
         .button img {
             width: 24px;
             height: 24px;
-            filter: invert(100%); /* Inverts colors to make dark icons white */
         }
         .button:hover {
-            background-color: rgba(255, 255, 255, 0.1); /* Light white overlay on hover */
-            color: #4CAF50; /* Green text on hover */
-            border-color: #4CAF50; /* Green border on hover */
+            background-color: #3e8e41; /* Darker green on hover */
         }
         .right-container {
             display: flex;
@@ -77,11 +80,11 @@
             align-items: center;
         }
         .youtube-player {
-            width: 560px;
-            height: 315px;
+            width: 100%; /* Full width for responsiveness */
+            height: auto; /* Maintain aspect ratio */
             border: none;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
         }
     </style>
 </head>
@@ -93,14 +96,14 @@
                 Dominate the Roblox exploiting market with our leading execution platform, featuring cutting-edge tools and a seamless user experience tailored for maximum efficiency.
             </div>
             <div class="buttons">
-                <button class="button" onclick="window.open('https://discord.gg/WAzSGcxdKg', '_blank')">
+                <a class="button" href="https://discord.gg/WAzSGcxdKg" target="_blank">
                     <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Logo">
                     Discord
-                </button>
-                <button class="button" onclick="window.open('https://github.com/GithubbingCode/ThatGodlyExecutor', '_blank')">
+                </a>
+                <a class="button" href="https://github.com/GithubbingCode/ThatGodlyExecutor" target="_blank">
                     <img src="https://icons.iconarchive.com/icons/simpleicons-team/simple/256/windows-icon.png" alt="Windows Logo">
                     Download
-                </button>
+                </a>
             </div>
         </div>
         <div class="right-container">
