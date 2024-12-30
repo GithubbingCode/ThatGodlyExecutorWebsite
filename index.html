@@ -3,111 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThatGodlyExecutor</title>
+    <title>ThatGodlyAdmin</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        /* Body Styling */
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #1e1e1e; /* Darker gray for a richer look */
-            color: #e0e0e0; /* Light gray for readability */
+            background-color: #030303; /* Deep dark */
+            color: #e0e0e0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-        }
-        .main-container {
-            display: flex;
-            justify-content: space-between;
-            width: 80%;
-            max-width: 1200px;
-            border-radius: 15px; /* Soft edges */
-            padding: 20px; /* Spacious layout */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-            background-color: #2a2a2a; /* Slightly lighter background for main container */
-        }
-        .left-container {
-            display: flex;
             flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Main container that holds all content */
+        .main-container {
+            width: 90%;
+            max-width: 1200px;
+            padding: 30px;
+            background-color: #0a0a1e; /* Dark midnight blue */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+        }
+
+        /* Styling for the tabs */
+        .tabs {
+            display: flex;
             justify-content: center;
-            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 40px;
         }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            background-color: #202040;
+            color: #ffffff;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .tab:hover, .tab.active {
+            background-color: #0088ff;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            width: 100%;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Title Styling */
         .title {
-            font-size: 3em; /* Slightly larger for prominence */
-            font-weight: 700; /* Bolder font */
-            margin-bottom: 10px;
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
         }
+
+        /* Highlight Color */
         .highlight {
-            color: #4CAF50; /* Modern green */
+            color: #0088ff;
         }
+
+        /* Description Styling */
         .description {
             font-size: 1.2em;
-            max-width: 600px;
-            line-height: 1.8;
-            color: #b0b0b0; /* Softer gray for text */
+            max-width: 800px;
+            line-height: 1.6;
+            color: #b0b0b0;
+            margin-bottom: 30px;
         }
+
+        /* Buttons Styling */
         .buttons {
-            margin-top: 30px;
             display: flex;
             gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
         }
+
         .button {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #4CAF50; /* Green background */
-            color: #fff; /* White text */
-            padding: 12px 24px;
+            background-color: #0088ff;
+            color: #ffffff;
+            padding: 15px 30px;
             cursor: pointer;
             font-size: 1em;
             font-weight: 600;
-            border: none; /* Remove border for a cleaner look */
-            border-radius: 30px; /* Rounded corners */
-            gap: 10px; /* Space between icon and text */
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
             transition: all 0.3s ease;
-            text-decoration: none; /* Ensure text decoration is removed for links */
         }
+
         .button img {
-            width: 24px;
-            height: 24px;
+            width: 24px; /* Adjusted size */
+            height: 24px; /* Adjusted size */
+            margin-right: 10px;
         }
+
         .button:hover {
-            background-color: #3e8e41; /* Darker green on hover */
+            background-color: #0056b3;
         }
-        .right-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
+
+        /* YouTube Player Styling */
         .youtube-player {
-            width: 100%; /* Full width for responsiveness */
-            height: auto; /* Maintain aspect ratio */
+            width: 100%;
+            max-width: 800px;
+            aspect-ratio: 16/9;
             border: none;
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+            margin: 0 auto;
         }
     </style>
+    <script>
+        // Tab switching logic
+        function openTab(event, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("defaultOpen").click(); // Default tab to open
+        });
+    </script>
 </head>
 <body>
     <div class="main-container">
-        <div class="left-container">
-            <div class="title">Experience only the best with <span class="highlight">ThatGodlyExecutor</span>.</div>
+        <div class="tabs">
+            <div class="tab" id="defaultOpen" onclick="openTab(event, 'Home')">Home</div>
+            <div class="tab" onclick="openTab(event, 'Download')">Download</div>
+            <div class="tab" onclick="openTab(event, 'Showcase')">Showcase</div>
+            <div class="tab">
+                <a href="https://discord.gg/WAzSGcxdKg" target="_blank" style="color: #ffffff; text-decoration: none;">Discord</a>
+            </div>
+        </div>
+
+        <!-- Home Tab Content -->
+        <div id="Home" class="tab-content home">
+            <div class="title">Discover Excellence with <span class="highlight">ThatGodlyAdmin</span></div>
             <div class="description">
                 Dominate the Roblox exploiting market with our leading execution platform, featuring cutting-edge tools and a seamless user experience tailored for maximum efficiency.
             </div>
+        </div>
+
+        <!-- Download Tab Content -->
+        <div id="Download" class="tab-content download">
+            <div class="description">
+                Ready to enhance your gaming experience? Download now!
+            </div>
             <div class="buttons">
-                <a class="button" href="https://discord.gg/WAzSGcxdKg" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Logo">
-                    Discord
-                </a>
-                <a class="button" href="https://github.com/GithubbingCode/ThatGodlyExecutor" target="_blank">
+                <a class="button" href="https://github.com/GithubbingCode/ThatGodlyAdmin1/raw/refs/heads/main/ThatGodlyAdmin.rar" target="_blank">
                     <img src="https://icons.iconarchive.com/icons/simpleicons-team/simple/256/windows-icon.png" alt="Windows Logo">
                     Download
                 </a>
             </div>
         </div>
-        <div class="right-container">
+
+        <!-- Showcase Tab Content -->
+        <div id="Showcase" class="tab-content showcase">
             <iframe class="youtube-player" 
                 src="https://www.youtube.com/embed/QIlnPqal8uQ" 
                 frameborder="0" 
